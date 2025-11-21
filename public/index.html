@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tracker - Real-Time Aviation Intelligence</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Flight Tracker & Airport Intelligence</h1>
+            <p class="subtitle">Real-time flight tracking and aviation data</p>
+        </header>
+
+        <div class="search-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="live-flights">Live Flights</button>
+                <button class="tab-button" data-tab="search-flight">Search Flight</button>
+                <button class="tab-button" data-tab="airports">Airports</button>
+                <button class="tab-button" data-tab="airlines">Airlines</button>
+            </div>
+
+            <div id="live-flights" class="tab-content active">
+                <h2>Live Flights</h2>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label for="flight-status">Flight Status:</label>
+                        <select id="flight-status">
+                            <option value="">All Status</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="active">Active</option>
+                            <option value="landed">Landed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="incident">Incident</option>
+                            <option value="diverted">Diverted</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="airline-filter">Airline Name:</label>
+                        <input type="text" id="airline-filter" placeholder="e.g., American Airlines">
+                    </div>
+                    <button onclick="loadLiveFlights()" class="btn-primary">Load Flights</button>
+                </div>
+                <div class="sort-section">
+                    <label>Sort By:</label>
+                    <button onclick="sortFlights('airline')" class="btn-sort">Airline</button>
+                    <button onclick="sortFlights('departure')" class="btn-sort">Departure</button>
+                    <button onclick="sortFlights('status')" class="btn-sort">Status</button>
+                </div>
+                <div id="live-flights-results" class="results"></div>
+            </div>
+
+            <div id="search-flight" class="tab-content">
+                <h2>Search Specific Flight</h2>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label for="flight-number-search">Flight Number/IATA:</label>
+                        <input type="text" id="flight-number-search" placeholder="e.g., AA100 or BA2490">
+                    </div>
+                    <button onclick="searchFlight()" class="btn-primary">Search Flight</button>
+                </div>
+                <div id="search-flight-results" class="results"></div>
+            </div>
+
+            <div id="airports" class="tab-content">
+                <h2>Airport Directory</h2>
+                <p class="info-text">Browse global airports and filter results by name, code, or location</p>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label for="airport-search">Filter Airports:</label>
+                        <input type="text" id="airport-search" placeholder="e.g., London, JFK, Heathrow">
+                    </div>
+                    <button onclick="searchAirports()" class="btn-primary">Load Airports</button>
+                </div>
+                <div id="airports-results" class="results"></div>
+            </div>
+
+            <div id="airlines" class="tab-content">
+                <h2>Airline Directory</h2>
+                <p class="info-text">Browse global airlines and filter results by name or code</p>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label for="airline-search">Filter Airlines:</label>
+                        <input type="text" id="airline-search" placeholder="e.g., Delta, Emirates, AA">
+                    </div>
+                    <button onclick="searchAirlines()" class="btn-primary">Load Airlines</button>
+                </div>
+                <div id="airlines-results" class="results"></div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading aviation data...</p>
+        </div>
+
+        <div id="error-message" class="error-message hidden"></div>
+
+        <footer>
+            <p>Powered by AviationStack API | Created by Jobealieu</p>
+            <p class="api-credit">API: <a href="https://aviationstack.com" target="_blank">AviationStack</a></p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
