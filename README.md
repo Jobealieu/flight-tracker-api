@@ -23,6 +23,8 @@ This application provides comprehensive aviation intelligence including:
 - Web Server 01: http://98.93.145.166:3000
 - Web Server 02: http://18.208.133.10:3000
 
+**Video Link**: https://youtu.be/lDdG7wEltww
+
 ## Features
 
 ### Core Functionality
@@ -627,7 +629,7 @@ Potential improvements for future versions:
 
 ## Demo Video
 
-**Video Link**: [To be added after recording]
+**Video Link**: https://youtu.be/lDdG7wEltww
 
 **Video Content**:
 - Local application demonstration
@@ -642,4 +644,5 @@ Potential improvements for future versions:
 
 - **GitHub Repository**: https://github.com/Jobealieu/flight-tracker-api
 - **Live Application**: http://35.173.244.253
+
 - **API Key**: e17384f0b902c6dd691c39d7cfffa36a
